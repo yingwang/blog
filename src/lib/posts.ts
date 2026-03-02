@@ -5,9 +5,7 @@ export interface BlogPost {
   content: string;
   date: string;
   author: string;
-  coverImage: string;
   tags: string[];
-  readTime: string;
 }
 
 const posts: BlogPost[] = [
@@ -73,10 +71,7 @@ Next.js continues to evolve with each release, making it an excellent choice for
     `,
     date: "2026-02-28",
     author: "Ying Wang",
-    coverImage:
-      "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop",
     tags: ["Next.js", "React", "Web Development"],
-    readTime: "5 min read",
   },
   {
     slug: "mastering-typescript",
@@ -152,10 +147,7 @@ TypeScript is a powerful tool that, when used well, significantly improves code 
     `,
     date: "2026-02-20",
     author: "Ying Wang",
-    coverImage:
-      "https://images.unsplash.com/photo-1516116216624-53e697fedbea?w=800&h=400&fit=crop",
     tags: ["TypeScript", "JavaScript", "Programming"],
-    readTime: "7 min read",
   },
   {
     slug: "building-beautiful-uis-with-tailwind",
@@ -225,10 +217,7 @@ Tailwind CSS has proven that utility-first CSS isn't just a trend — it's a gen
     `,
     date: "2026-02-15",
     author: "Ying Wang",
-    coverImage:
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=400&fit=crop",
     tags: ["CSS", "Tailwind", "UI Design"],
-    readTime: "6 min read",
   },
   {
     slug: "the-power-of-react-server-components",
@@ -290,10 +279,7 @@ Server Components are still evolving, but they've already changed how we archite
     `,
     date: "2026-02-10",
     author: "Ying Wang",
-    coverImage:
-      "https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=800&h=400&fit=crop",
     tags: ["React", "Server Components", "Performance"],
-    readTime: "8 min read",
   },
   {
     slug: "git-workflow-for-teams",
@@ -362,10 +348,7 @@ A good Git workflow reduces friction and lets your team focus on writing great c
     `,
     date: "2026-02-05",
     author: "Ying Wang",
-    coverImage:
-      "https://images.unsplash.com/photo-1556075798-4825dfaaf498?w=800&h=400&fit=crop",
     tags: ["Git", "Teamwork", "DevOps"],
-    readTime: "6 min read",
   },
 ];
 

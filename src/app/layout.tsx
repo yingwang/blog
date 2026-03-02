@@ -4,9 +4,9 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Ying's Blog - Thoughts on Web Development",
+  title: "Ying Wang blog",
   description:
-    "A personal blog about web development, programming, and technology.",
+    "Thoughts on web development, programming, and technology.",
 };
 
 export default function RootLayout({
@@ -16,12 +16,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="font-sans">
-        <div className="flex min-h-screen flex-col">
-          <Header />
-          <main className="flex-1">{children}</main>
-          <Footer />
+      <body>
+        <Header />
+        <div className="page-content">
+          <div className="wrap">
+            {children}
+          </div>
         </div>
+        <Footer />
       </body>
     </html>
   );
