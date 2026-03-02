@@ -3,7 +3,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "All Posts - Ying Wang blog",
+  title: "All Posts - Ying Wang",
   description: "Browse all blog posts about web development and programming.",
 };
 

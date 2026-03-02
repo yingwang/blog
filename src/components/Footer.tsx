@@ -4,7 +4,7 @@ export default function Footer() {
       <div className="wrap">
         <div className="footer-col-1 column">
           <ul>
-            <li>Ying Wang blog</li>
+            <li>Ying Wang</li>
           </ul>
         </div>
 
