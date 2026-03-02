@@ -9,30 +9,36 @@ export default function SubscribeForm() {
   >("idle");
   const [message, setMessage] = useState("");
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setStatus("loading");
 
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      setStatus("error");
+      setMessage("Please enter a valid email address.");
+      return;
+    }
+
     try {
-      const res = await fetch("/api/subscribe", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email }),
-      });
+      const stored = localStorage.getItem("blog-subscribers");
+      const subscribers: string[] = stored ? JSON.parse(stored) : [];
 
-      const data = await res.json();
-
-      if (res.ok) {
+      if (subscribers.includes(email.toLowerCase())) {
         setStatus("success");
-        setMessage(data.message);
-        setEmail("");
-      } else {
-        setStatus("error");
-        setMessage(data.message || "Something went wrong.");
+        setMessage("You're already subscribed!");
+        return;
       }
+
+      subscribers.push(email.toLowerCase());
+      localStorage.setItem("blog-subscribers", JSON.stringify(subscribers));
+
+      setStatus("success");
+      setMessage("Thanks for subscribing! You'll hear from me soon.");
+      setEmail("");
     } catch {
       setStatus("error");
-      setMessage("Network error. Please try again.");
+      setMessage("Something went wrong. Please try again.");
     }
   };
 
