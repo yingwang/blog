@@ -5,13 +5,8 @@ export default function Header() {
     <header className="site-header">
       <div className="wrap">
         <Link href="/" className="site-title">
-          Ying Wang blog
+          Ying Wang
         </Link>
-        <nav className="site-nav">
-          <Link href="/blog" className="page-link">
-            Blog
-          </Link>
-        </nav>
       </div>
     </header>
   );

@@ -4,7 +4,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Ying Wang blog",
+  title: "Ying Wang",
   description:
     "Thoughts on web development, programming, and technology.",
 };
