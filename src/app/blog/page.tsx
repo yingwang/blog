@@ -12,7 +12,10 @@ export default function BlogPage() {
 
   return (
     <div className="home">
-      <h1>All Posts</h1>
+      <div className="section-header">
+        <h2>All Posts</h2>
+      </div>
+
       <ul className="posts">
         {posts.map((post) => (
           <li key={post.slug}>
@@ -26,8 +29,14 @@ export default function BlogPage() {
             <Link href={`/blog/${post.slug}`} className="post-link">
               {post.title}
             </Link>
-            <br />
             <span className="post-excerpt">{post.excerpt}</span>
+            <div className="post-tags">
+              {post.tags.map((tag) => (
+                <span key={tag} className="post-tag">
+                  {tag}
+                </span>
+              ))}
+            </div>
           </li>
         ))}
       </ul>
