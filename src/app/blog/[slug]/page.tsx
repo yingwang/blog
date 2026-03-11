@@ -2,6 +2,8 @@ import { getAllPosts, getPostBySlug } from "@/lib/posts";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import type { Metadata } from "next";
+import ShareButtons from "@/components/ShareButtons";
+import GiscusComments from "@/components/GiscusComments";
 
 type Params = Promise<{ slug: string }>;
 
@@ -66,6 +68,8 @@ export default async function PostPage({ params }: { params: Params }) {
         className="post-content"
         dangerouslySetInnerHTML={{ __html: post.content }}
       />
+      <ShareButtons title={post.title} slug={slug} />
+      <GiscusComments />
       <hr style={{ border: "none", borderTop: "1px solid #e2e8f0", margin: "48px 0 24px" }} />
       <Link href="/" style={{ fontSize: "15px", fontWeight: 600 }}>
         &larr; Back to home
