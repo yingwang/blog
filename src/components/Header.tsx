@@ -7,6 +7,22 @@ export default function Header() {
         <Link href="/" className="site-title">
           Ying Wang
         </Link>
+        <nav className="site-nav">
+          <Link href="/" className="page-link">
+            Home
+          </Link>
+          <Link href="/blog" className="page-link">
+            Blog
+          </Link>
+          <a
+            href="https://github.com/yingwang"
+            className="page-link"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            GitHub
+          </a>
+        </nav>
       </div>
     </header>
   );

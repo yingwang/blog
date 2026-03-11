@@ -6,6 +6,20 @@ export default function Home() {
 
   return (
     <div className="home">
+      <section className="hero">
+        <h1>
+          Hi, I&apos;m <span className="hero-gradient">Ying Wang</span>
+        </h1>
+        <p>
+          Writing about web development, programming, and technology.
+        </p>
+      </section>
+
+      <div className="section-header">
+        <h2>Recent Posts</h2>
+        <Link href="/blog">View all</Link>
+      </div>
+
       <ul className="posts">
         {posts.map((post) => (
           <li key={post.slug}>
@@ -19,8 +33,14 @@ export default function Home() {
             <Link href={`/blog/${post.slug}`} className="post-link">
               {post.title}
             </Link>
-            <br />
             <span className="post-excerpt">{post.excerpt}</span>
+            <div className="post-tags">
+              {post.tags.map((tag) => (
+                <span key={tag} className="post-tag">
+                  {tag}
+                </span>
+              ))}
+            </div>
           </li>
         ))}
       </ul>
