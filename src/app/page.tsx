@@ -11,7 +11,7 @@ export default function Home() {
           Hi, I&apos;m <span className="hero-gradient">Ying Wang</span>
         </h1>
         <p>
-          Writing about web development, programming, and technology.
+          Writing about software engineering, quantitative finance, and building things.
         </p>
       </section>
 
