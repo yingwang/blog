@@ -403,6 +403,100 @@ a:visited {
   background: none;
 }
 
+/* Share buttons */
+
+.share-buttons {
+  margin: 40px 0;
+  padding: 24px 0;
+  border-top: 1px solid #e2e8f0;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.share-label {
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #94a3b8;
+  margin-bottom: 12px;
+}
+
+.share-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.share-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  border: 1px solid #e2e8f0;
+  background: #fff;
+  color: #475569;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.share-btn:hover {
+  text-decoration: none;
+}
+
+.share-btn:visited {
+  color: #475569;
+}
+
+.share-twitter:hover {
+  border-color: #1d9bf0;
+  color: #1d9bf0;
+  background: #f0f9ff;
+}
+
+.share-linkedin:hover {
+  border-color: #0a66c2;
+  color: #0a66c2;
+  background: #eff6ff;
+}
+
+.share-reddit:hover {
+  border-color: #ff4500;
+  color: #ff4500;
+  background: #fff7ed;
+}
+
+.share-hn:hover {
+  border-color: #ff6600;
+  color: #ff6600;
+  background: #fff7ed;
+}
+
+.share-copy:hover {
+  border-color: #6366f1;
+  color: #6366f1;
+  background: #eef2ff;
+}
+
+/* Giscus comments */
+
+.giscus-wrapper {
+  margin-top: 48px;
+}
+
+.comments-heading {
+  font-size: 20px;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 24px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid #e2e8f0;
+}
+
 /* 404 Page */
 
 .not-found {
@@ -510,5 +604,13 @@ a:visited {
   .post-content ul,
   .post-content ol {
     padding-left: 10px;
+  }
+
+  .share-btn span {
+    display: none;
+  }
+
+  .share-btn {
+    padding: 10px;
   }
 }
