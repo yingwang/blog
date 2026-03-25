@@ -3,43 +3,50 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "All Posts - Ying Wang",
-  description: "Browse all blog posts about web development and programming.",
+  title: "Blog - Ying Wang",
+  description: "All blog posts.",
 };
 
 export default function BlogPage() {
   const posts = getAllPosts();
 
   return (
-    <div className="home">
-      <div className="section-header">
-        <h2>All Posts</h2>
-      </div>
-
-      <ul className="posts">
+    <div>
+      <h1 className="mb-10 text-2xl font-bold tracking-tight">All Posts</h1>
+      <div className="space-y-8">
         {posts.map((post) => (
-          <li key={post.slug}>
-            <span className="post-date">
+          <article key={post.slug}>
+            <time className="text-sm tabular-nums text-gray-400">
               {new Date(post.date).toLocaleDateString("en-US", {
+                year: "numeric",
                 month: "short",
                 day: "numeric",
-                year: "numeric",
               })}
-            </span>
-            <Link href={`/blog/${post.slug}`} className="post-link">
-              {post.title}
-            </Link>
-            <span className="post-excerpt">{post.excerpt}</span>
-            <div className="post-tags">
+            </time>
+            <h2 className="mt-1 text-lg font-medium">
+              <Link
+                href={`/blog/${post.slug}`}
+                className="text-gray-900 transition-colors hover:text-blue-600"
+              >
+                {post.title}
+              </Link>
+            </h2>
+            <p className="mt-1 text-sm leading-relaxed text-gray-500">
+              {post.excerpt}
+            </p>
+            <div className="mt-2 flex gap-2">
               {post.tags.map((tag) => (
-                <span key={tag} className="post-tag">
-                  {tag}
+                <span
+                  key={tag}
+                  className="text-xs text-gray-400"
+                >
+                  #{tag}
                 </span>
               ))}
             </div>
-          </li>
+          </article>
         ))}
-      </ul>
+      </div>
     </div>
   );
 }

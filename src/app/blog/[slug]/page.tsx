@@ -23,6 +23,13 @@ export async function generateMetadata({
   return {
     title: `${post.title} - Ying Wang`,
     description: post.excerpt,
+    openGraph: {
+      title: post.title,
+      description: post.excerpt,
+      type: "article",
+      publishedTime: post.date,
+      authors: [post.author],
+    },
   };
 }
 
@@ -35,45 +42,47 @@ export default async function PostPage({ params }: { params: Params }) {
   }
 
   return (
-    <div className="post">
-      <div className="post-header">
-        <h1>{post.title}</h1>
-        <p className="meta">
-          {new Date(post.date).toLocaleDateString("en-US", {
-            month: "long",
-            day: "numeric",
-            year: "numeric",
-          })}{" "}
-          &middot; {post.author}
-        </p>
-        <div className="post-tags" style={{ marginTop: "12px", display: "flex", gap: "6px", flexWrap: "wrap" }}>
+    <article>
+      <header className="mb-10">
+        <h1 className="text-3xl font-bold leading-tight tracking-tight">
+          {post.title}
+        </h1>
+        <div className="mt-3 flex items-center gap-3 text-sm text-gray-400">
+          <time>
+            {new Date(post.date).toLocaleDateString("en-US", {
+              year: "numeric",
+              month: "long",
+              day: "numeric",
+            })}
+          </time>
+          <span>&middot;</span>
+          <span>{post.author}</span>
+        </div>
+        <div className="mt-3 flex flex-wrap gap-2">
           {post.tags.map((tag) => (
             <span
               key={tag}
-              style={{
-                fontSize: "12px",
-                fontWeight: 600,
-                color: "#6366f1",
-                background: "#eef2ff",
-                padding: "3px 10px",
-                borderRadius: "99px",
-              }}
+              className="rounded-full bg-gray-100 px-2.5 py-0.5 text-xs text-gray-500"
             >
               {tag}
             </span>
           ))}
         </div>
-      </div>
+      </header>
       <div
-        className="post-content"
+        className="prose prose-gray max-w-none prose-headings:tracking-tight prose-a:text-blue-600 prose-a:no-underline hover:prose-a:underline"
         dangerouslySetInnerHTML={{ __html: post.content }}
       />
       <ShareButtons title={post.title} slug={slug} />
       <GiscusComments />
-      <hr style={{ border: "none", borderTop: "1px solid #e2e8f0", margin: "48px 0 24px" }} />
-      <Link href="/" style={{ fontSize: "15px", fontWeight: 600 }}>
-        &larr; Back to home
-      </Link>
-    </div>
+      <div className="mt-12 border-t border-gray-100 pt-6">
+        <Link
+          href="/"
+          className="text-sm text-gray-400 transition-colors hover:text-gray-900"
+        >
+          &larr; Back to home
+        </Link>
+      </div>
+    </article>
   );
 }

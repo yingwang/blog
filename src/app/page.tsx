@@ -5,45 +5,50 @@ export default function Home() {
   const posts = getAllPosts();
 
   return (
-    <div className="home">
-      <section className="hero">
-        <h1>
-          Hi, I&apos;m <span className="hero-gradient">Ying Wang</span>
-        </h1>
-        <p>
-          Writing about software engineering, quantitative finance, and building things.
+    <div>
+      <section className="mb-16">
+        <h1 className="text-3xl font-bold tracking-tight">Ying Wang</h1>
+        <p className="mt-3 text-lg text-gray-500">
+          Writing about software engineering, quantitative finance, and building
+          things.
         </p>
       </section>
 
-      <div className="section-header">
-        <h2>Recent Posts</h2>
-        <Link href="/blog">View all</Link>
-      </div>
-
-      <ul className="posts">
-        {posts.map((post) => (
-          <li key={post.slug}>
-            <span className="post-date">
-              {new Date(post.date).toLocaleDateString("en-US", {
-                month: "short",
-                day: "numeric",
-                year: "numeric",
-              })}
-            </span>
-            <Link href={`/blog/${post.slug}`} className="post-link">
-              {post.title}
-            </Link>
-            <span className="post-excerpt">{post.excerpt}</span>
-            <div className="post-tags">
-              {post.tags.map((tag) => (
-                <span key={tag} className="post-tag">
-                  {tag}
-                </span>
-              ))}
-            </div>
-          </li>
-        ))}
-      </ul>
+      <section>
+        <h2 className="mb-8 text-xs font-medium uppercase tracking-widest text-gray-400">
+          Recent Posts
+        </h2>
+        <div className="space-y-8">
+          {posts.map((post) => (
+            <article key={post.slug}>
+              <time className="text-sm tabular-nums text-gray-400">
+                {new Date(post.date).toLocaleDateString("en-US", {
+                  year: "numeric",
+                  month: "short",
+                  day: "numeric",
+                })}
+              </time>
+              <h3 className="mt-1 text-lg font-medium">
+                <Link
+                  href={`/blog/${post.slug}`}
+                  className="text-gray-900 transition-colors hover:text-blue-600"
+                >
+                  {post.title}
+                </Link>
+              </h3>
+              <p className="mt-1 text-sm leading-relaxed text-gray-500">
+                {post.excerpt}
+              </p>
+            </article>
+          ))}
+        </div>
+        <Link
+          href="/blog"
+          className="mt-10 inline-block text-sm text-gray-400 transition-colors hover:text-gray-900"
+        >
+          View all posts &rarr;
+        </Link>
+      </section>
     </div>
   );
 }

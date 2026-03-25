@@ -29,8 +29,10 @@ export default function GiscusComments() {
   }, []);
 
   return (
-    <div className="giscus-wrapper">
-      <h2 className="comments-heading">Comments</h2>
+    <div className="mt-12">
+      <h2 className="mb-6 border-b border-gray-100 pb-3 text-lg font-semibold">
+        Comments
+      </h2>
       <div ref={ref} />
     </div>
   );
