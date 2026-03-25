@@ -10,12 +10,6 @@ export default function Header() {
         Ying Wang
       </Link>
       <nav className="flex gap-6 text-sm text-gray-500">
-        <Link
-          href="/blog"
-          className="transition-colors hover:text-gray-900"
-        >
-          Blog
-        </Link>
         <a
           href="https://github.com/yingwang"
           target="_blank"

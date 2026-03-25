@@ -29,7 +29,7 @@ export default function Home() {
               </time>
               <h3 className="mt-1 text-lg font-medium">
                 <Link
-                  href={`/blog/${post.slug}`}
+                  href={`/${post.slug}`}
                   className="text-gray-900 transition-colors hover:text-blue-600"
                 >
                   {post.title}
@@ -41,12 +41,6 @@ export default function Home() {
             </article>
           ))}
         </div>
-        <Link
-          href="/blog"
-          className="mt-10 inline-block text-sm text-gray-400 transition-colors hover:text-gray-900"
-        >
-          View all posts &rarr;
-        </Link>
       </section>
     </div>
   );
