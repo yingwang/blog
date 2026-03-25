@@ -55,7 +55,7 @@ npx claude-channel-weixin login
 The login command displays a QR code in your terminal. Scan it with WeChat, and the bot token is saved securely. Then start Claude Code with the plugin:
 
 ```bash
-claude --channels plugin:weixin@claude-code-weixin
+claude --dangerously-load-development-channels plugin:weixin@claude-channel-weixin
 ```
 
 That's it. Messages from approved WeChat users will start flowing into your Claude session.
