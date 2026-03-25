@@ -64,6 +64,4 @@ That's it. Messages from approved WeChat users will start flowing into your Clau
 
 You can run multiple WeChat bots in a single Claude Code session. Each bot maintains separate message streams, configuration, and allowlists. Responses route through the correct bot instance automatically.
 
-## What's Next
-
-I'm planning to add group chat support, richer media handling, and better message threading. If you use WeChat and Claude Code, give it a try — feedback and PRs welcome on [GitHub](https://github.com/yingwang/claude-code-weixin).
+If you use WeChat and Claude Code, give it a try — feedback and PRs welcome on [GitHub](https://github.com/yingwang/claude-code-weixin).
