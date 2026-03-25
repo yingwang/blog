@@ -7,8 +7,7 @@ export default function Home() {
   return (
     <div>
       <section className="mb-16">
-        <h1 className="text-3xl font-bold tracking-tight">Ying Wang</h1>
-        <p className="mt-3 text-lg text-gray-500">
+        <p className="text-lg text-gray-500">
           Writing about software engineering, quantitative finance, and building
           things.
         </p>
