@@ -1,20 +1,21 @@
-# blog
+# Blog
 
-Personal blog built with Next.js 15, TypeScript, and Tailwind CSS. Deployed to GitHub Pages.
+Personal blog built with Next.js 15, deployed to GitHub Pages.
 
 **Live:** https://yingwang.github.io/blog/
 
 ## Stack
 
 - Next.js 15 (static export)
-- React 19
+- React 19 + TypeScript
 - Tailwind CSS + Typography plugin
 - Markdown posts with gray-matter + marked
-- Giscus comments
+- Giscus comments (GitHub-based)
+- GitHub Pages auto-deploy on push
 
-## Writing a new post
+## Writing a New Post
 
-Create a Markdown file in `posts/`:
+Create `posts/<slug>.md`:
 
 ```markdown
 ---
@@ -28,7 +29,7 @@ tags: ["tag1", "tag2"]
 Your content here...
 ```
 
-Push to `main` and GitHub Pages deploys automatically.
+Push to `main` and it deploys automatically.
 
 ## Development
 
@@ -38,14 +39,15 @@ npm run dev     # http://localhost:3000/blog/
 npm run build   # static export to out/
 ```
 
-## Project structure
+## Project Structure
 
 ```
-posts/           # Markdown blog posts
+posts/               # Markdown blog posts
 src/
   app/
-    page.tsx     # Home page with post list
-    [slug]/      # Individual post pages
-  components/    # Header, Footer, ShareButtons, GiscusComments
-  lib/posts.ts   # Reads and parses markdown posts
+    page.tsx         # Home -- post list
+    [slug]/page.tsx  # Individual post
+    layout.tsx       # Root layout
+  components/        # Header, Footer, ShareButtons, GiscusComments
+  lib/posts.ts       # Markdown parser
 ```
